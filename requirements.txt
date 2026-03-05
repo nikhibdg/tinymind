@@ -1,0 +1,26 @@
+# Core ML / training
+torch>=2.2.0
+transformers>=4.40.0
+datasets>=2.18.0
+accelerate>=0.28.0
+peft>=0.10.0
+trl>=0.8.0
+
+# Config & utilities
+pyyaml>=6.0
+omegaconf>=2.3
+tqdm>=4.66
+rich>=13.0
+
+# Quantization & export
+bitsandbytes>=0.43.0
+optimum>=1.18.0
+
+# Evaluation
+lm-eval>=0.4.0
+
+# Dev (install with: pip install -e ".[dev]")
+# pytest>=7.0
+# black
+# ruff
+# mypy

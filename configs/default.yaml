@@ -1,0 +1,30 @@
+# TinyMind default configuration
+
+distillation:
+  teacher_model: "meta-llama/Llama-3.1-8B-Instruct"
+  student_model: "meta-llama/Llama-3.2-1B"
+  temperature: 2.0
+  alpha: 0.5                  # weight: KD loss vs task loss
+
+reason_distill:
+  enabled: true
+  cot_injection_layer: -1     # inject CoT signals at final layer
+  reasoning_weight: 0.3
+
+training:
+  epochs: 3
+  batch_size: 8
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-5
+  warmup_steps: 100
+  fp16: true
+  output_dir: "checkpoints/"
+
+export:
+  backend: "phone_llm"        # phone_llm | onnx | coreml
+  quantization: "int4"        # int4 | int8 | fp16
+  target_device: "android"    # android | ios | generic
+
+benchmarks:
+  datasets: ["mmlu", "hellaswag", "arc_challenge"]
+  max_samples: 1000
