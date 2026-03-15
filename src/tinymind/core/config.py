@@ -65,7 +65,7 @@ class ExportConfig:
     """Mobile / edge deployment export settings."""
 
     backend: Literal["phone_llm", "onnx", "coreml"] = "phone_llm"
-    quantization: Literal["int4", "int8", "fp16", "none"] = "int4"
+    quantization: Literal["Q4_K_M", "Q8_0", "int4", "int8", "fp16", "none"] = "Q4_K_M"
     target_device: Literal["android", "ios", "generic"] = "android"
     output_dir: str = "exports/"
 
@@ -131,8 +131,8 @@ class DistillConfig:
     """
 
     # ── Models ────────────────────────────────────────────────────────────────
-    teacher_model: str = "meta-llama/Llama-3.1-8B-Instruct"
-    student_model: str = "meta-llama/Llama-3.2-1B"
+    teacher_model: str = "deepseek-ai/DeepSeek-R1"
+    student_model: str = "Qwen/Qwen3-4B"
 
     # ── Distillation hyper-parameters ─────────────────────────────────────────
     temperature: float = 2.0

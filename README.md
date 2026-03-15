@@ -3,13 +3,18 @@
 End-to-end pipeline for distilling large language models, injecting chain-of-thought
 reasoning via **ReasonDistill**, and deploying offline to mobile via **PhoneLLM**.
 
+Default model pair: **DeepSeek-R1** (teacher) → **Qwen3-4B** (student), exported as **Q4_K_M GGUF**.
+
 ## Architecture
 
 ```
-Teacher LLM
+deepseek-ai/DeepSeek-R1  (teacher — frozen)
     │
     ▼  ReasonDistill (CoT injection)
-Student LLM ──► PhoneLLM export ──► Android / iOS
+Qwen/Qwen3-4B  (student — LoRA fine-tuned)
+    │
+    ▼  PhoneLLM export (Q4_K_M quantization)
+Android / iOS  (offline inference)
 ```
 
 ## Subpackages

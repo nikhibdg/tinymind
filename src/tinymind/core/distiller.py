@@ -21,7 +21,7 @@ Typical usage::
     cfg   = DistillConfig.from_yaml("configs/default.yaml")
     distiller = Distiller(cfg, teacher_model, student_model, tokenizer)
     history   = distiller.fit(train_dl, eval_dl)
-    distiller.export("exports/student_int4")
+    distiller.export("exports/student_Q4_K_M")
 """
 
 from __future__ import annotations

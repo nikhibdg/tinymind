@@ -1,8 +1,10 @@
 # TinyMind default configuration
+# Teacher: deepseek-ai/DeepSeek-R1
+# Student: Qwen/Qwen3-4B
 
 distillation:
-  teacher_model: "meta-llama/Llama-3.1-8B-Instruct"
-  student_model: "meta-llama/Llama-3.2-1B"
+  teacher_model: "deepseek-ai/DeepSeek-R1"
+  student_model: "Qwen/Qwen3-4B"
   temperature: 2.0
   alpha: 0.5                  # weight: KD loss vs task loss
 
@@ -22,7 +24,7 @@ training:
 
 export:
   backend: "phone_llm"        # phone_llm | onnx | coreml
-  quantization: "int4"        # int4 | int8 | fp16
+  quantization: "Q4_K_M"     # Q4_K_M | Q8_0 | int4 | int8 | fp16
   target_device: "android"    # android | ios | generic
 
 benchmarks:
