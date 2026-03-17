@@ -6,6 +6,8 @@ and offline mobile deployment.
 __version__ = "0.1.0"
 __author__ = "TinyMind Contributors"
 
-from tinymind.core import distiller
+from tinymind.core.config import DistillConfig
+from tinymind.core.distiller import Distiller
+from tinymind.core.losses import DistillationLoss, ReasoningLoss, ContrastiveLoss
 
-__all__ = ["distiller"]
+__all__ = ["DistillConfig", "Distiller", "DistillationLoss", "ReasoningLoss", "ContrastiveLoss"]
